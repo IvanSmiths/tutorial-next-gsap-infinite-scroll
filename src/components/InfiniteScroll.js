@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects } from "../data/projects"
 
 function InfiniteScroll() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        ScrollTrigger.create({
+            start: 1,
+            end: "max",
+            onLeaveBack: self => self.scroll(ScrollTrigger.maxScroll(window) - 2),
+            onLeave: self => self.scroll(2)
+        }).scroll(2);
+    }, []);
     return (
         <>
             <div className='infinite-scroll'>
