@@ -1,8 +1,9 @@
+import InfiniteScroll from '@/components/InfiniteScroll'
 import React from 'react'
 
 function Home() {
   return (
-    <div>Home</div>
+    <InfiniteScroll />
   )
 }
 
