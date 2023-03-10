@@ -1,4 +1,5 @@
 import React from 'react'
+import { projects } from "../data/projects"
 
 function InfiniteScroll() {
     return (
@@ -13,6 +14,14 @@ function InfiniteScroll() {
                         <span className='email'>info@johndoe.com</span>
                         <span className="linkedin">linkedin</span>
                     </div>
+                </div>
+                <div className="projects-wrapper">
+                    {projects.map((project, index) => (
+                        <div className='project' key={index}>
+                            <img src={project.image} alt="" />
+                            <h2>{project.name}</h2>
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
